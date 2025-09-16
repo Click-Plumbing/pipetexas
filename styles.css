@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: url('1339089830.jpg') center center/cover no-repeat fixed;
+    background: url('1339089830.jpg') center center/cover no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -102,6 +103,15 @@ body::before {
     line-height: 1.6;
 }
 
+/* Mobile background fix */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .letter {
@@ -126,6 +136,13 @@ body::before {
 }
 
 @media (max-width: 480px) {
+    body {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    
     .letter {
         padding: 30px 20px;
     }
